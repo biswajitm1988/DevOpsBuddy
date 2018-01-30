@@ -18,7 +18,7 @@ public class DevOpsBuddyApplicationTests {
 
 	@Test
 	public void testMessageByLocaleServie() throws Exception{
-		String expectedresult = "Bootstrap starter template i18n";
+		String expectedresult = "Bootstrap starter template";
 		String messageId="index.main.callout";
 		String actual = i18NService.getMessage(messageId);
 		Assert.assertEquals("The actual and expected strings don't match", expectedresult, actual);
