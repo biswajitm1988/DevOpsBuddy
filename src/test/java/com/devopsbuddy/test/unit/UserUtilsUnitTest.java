@@ -8,9 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 
-/*import com.devopsbuddy.web.domain.frontend.BasicAccountPayload;
+import com.devopsbuddy.web.domain.frontend.BasicAccountPayload;
 import uk.co.jemos.podam.api.PodamFactory;
-import uk.co.jemos.podam.api.PodamFactoryImpl;*/
+import uk.co.jemos.podam.api.PodamFactoryImpl;
 
 import java.util.UUID;
 
@@ -19,7 +19,7 @@ public class UserUtilsUnitTest {
 
     private MockHttpServletRequest mockHttpServletRequest;
 
-    //private PodamFactory podamFactory;
+    private PodamFactory podamFactory;
 
     @Before
     public void init() {
@@ -44,7 +44,7 @@ public class UserUtilsUnitTest {
 
     }
 
-    /*@Test
+    @Test
     public void mapWebUserToDomainUser() {
 
         BasicAccountPayload webUser = podamFactory.manufacturePojoWithFullData(BasicAccountPayload.class);
@@ -62,5 +62,6 @@ public class UserUtilsUnitTest {
         Assert.assertEquals(webUser.getCountry(), user.getCountry());
         Assert.assertEquals(webUser.getDescription(), user.getDescription());
 
-    }*/
+    }
+
 }
