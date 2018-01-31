@@ -24,6 +24,7 @@ public class DevOpsBuddyApplication implements CommandLineRunner{
 
 	/**The application logger*/
 	private static final Logger LOG = LoggerFactory.getLogger(DevOpsBuddyApplication.class);
+
 	@Autowired
 	private UserService userService;
 
