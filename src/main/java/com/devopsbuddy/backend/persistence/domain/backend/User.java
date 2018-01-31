@@ -83,8 +83,6 @@ public class User implements Serializable, UserDetails {
         return username;
     }
 
-
-
     public void setUsername(String username) {
         this.username = username;
     }
@@ -161,27 +159,6 @@ public class User implements Serializable, UserDetails {
         this.enabled = enabled;
     }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        Set<GrantedAuthority> authorities = new HashSet<>();
-        userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
-        return authorities;
-    }
 
     public String getPassword() {
         return password;
@@ -208,23 +185,26 @@ public class User implements Serializable, UserDetails {
     }
 
 
-
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        User user = (User) o;
-
-        return id == user.id;
-
+    public boolean isAccountNonExpired() {
+        return true;
     }
 
     @Override
-    public int hashCode() {
-        return (int) (id ^ (id >>> 32));
+    public boolean isAccountNonLocked() {
+        return true;
     }
 
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        Set<GrantedAuthority> authorities = new HashSet<>();
+        userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
+        return authorities;
+    }
 }
 
